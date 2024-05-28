@@ -1,0 +1,159 @@
+
+  #toggle {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 60px;
+    height: 30px;
+    border-radius: 30px;
+    background-color: #333;
+    position: absolute;
+    top: 50px;
+    right: 50px;
+    transition: all 0.5s ease-in;
+    cursor: pointer;
+    z-index: 1;
+  }
+  
+  /* Making a dot switch inside the Toggle Button */
+  #toggle::before {
+    content: "";
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: #EEE;
+    position: absolute;
+    top: 50%;
+    left: 3px;
+    transform: translateY(-50%);
+    transition: all 0.5s ease-in;
+  }
+  
+  /* Changing toggle button background when checked */
+  #toggle:checked {
+    background: #ececec;
+  }
+  
+  /* Changing dot switch color and moving to the right side when checked */
+  #toggle:checked::before {
+    background: #333;
+    left: 32px;
+  }
+
+  #toggle:checked ~ .container {
+    background-color: #333;
+    color: #EEE;
+  }
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 20px;
+    padding: 0;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+h1 {
+    font-size: 50px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+h1, h2 {
+    color: var(--header-color);
+}
+
+a {
+    color: var(--link-color);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+p {
+    max-width: 1000px;
+    margin: 0 auto;
+    margin-bottom: 40px;
+    font-weight: 600;
+}
+
+.section {
+    max-width: 1000px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: var(--section-background);
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.intro {
+    margin-bottom: 10px;
+    font-style: italic;
+    color: var(--intro-color);
+}
+
+
+@media (max-width: 600px) {
+    body {
+        margin: 10px;
+    }
+
+    .section {
+        padding: 5px;
+    }
+
+    .theme-toggle {
+        text-align: center;
+    }
+}
+
+/* Tema claro */
+:root {
+    --background-color: #f4f4f4;
+    --text-color: #333;
+    --header-color: #333;
+    --link-color: #1a73e8;
+    --section-background: #fff;
+    --intro-color: #555;
+    --button-background: #1a73e8;
+    --button-text: #fff;
+    --button-hover-background: #1558b0;
+}
+
+/* Tema oscuro */
+body.dark-mode {
+    --background-color: #121212;
+    --text-color: #e0e0e0;
+    --header-color: #e0e0e0;
+    --link-color: #8ab4f8;
+    --section-background: #1e1e1e;
+    --intro-color: #aaaaaa;
+    --button-background: #8ab4f8;
+    --button-text: #121212;
+    --button-hover-background: #5c7cb8;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--section-background);
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.social-links {
+    padding: 10px 20px 0px 10px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+.social-links a {
+    color: var(--text-color);
+}
