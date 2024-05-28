@@ -15,6 +15,7 @@
     z-index: 1;
   }
   
+
   /* Making a dot switch inside the Toggle Button */
   #toggle::before {
     content: "";
@@ -44,6 +45,7 @@
     background-color: #333;
     color: #EEE;
   }
+
 
 body {
     font-family: Arial, sans-serif;
@@ -98,9 +100,13 @@ p {
 }
 
 
-@media (max-width: 600px) {
+@media (max-width: 850px) {
     body {
         margin: 10px;
+    }
+
+    h1 {
+        margin-top: 95px;
     }
 
     .section {
@@ -111,6 +117,8 @@ p {
         text-align: center;
     }
 }
+
+
 
 /* Tema claro */
 :root {
